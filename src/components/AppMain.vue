@@ -8,25 +8,40 @@ export default {
   data() {
     return {
       state,
+      searchingText: '',
+    }
+  },
+  methods: {
+    getMovie(url){
+      this.state.getData(url)
+    },
+    searchMovie(){
+      this.getMovie(`https://api.themoviedb.org/3/search/movie?api_key=dac5f4cfb17fc8dc2333867ac5b06c0b&query=${this.searchingText}`)
     }
   },
 
   mounted() {
-    this.state.getData('https://api.themoviedb.org/3/search/movie?api_key=dac5f4cfb17fc8dc2333867ac5b06c0b&query=the+matrix')
+    this.getMovie('https://api.themoviedb.org/3/search/movie?api_key=dac5f4cfb17fc8dc2333867ac5b06c0b')
   }
 }
 </script>
 
 
 <template>
-  <div>
+  <div class="searchbox">
+    <input type="text" v-model="searchingText">
+    <button @click="searchMovie(url)"><i class="fa fa-search" aria-hidden="true"></i></button>
+  </div>
+
+  <div class="movies">
     <ul>
       <li v-for="movie in state.movies">
-        <h5>
+        <h3>
           {{ movie.title }}
-        </h5>
-        <img :src="movie.poster_path" alt="">
-        <p>{{ movie.release_date }}</p>
+        </h3>
+        <h5>{{ movie.original_title }}</h5>
+        <h4>{{ movie.original_language }}</h4>
+        <h4>{{ parseInt(movie.vote_average / 2)}}</h4>
       </li>
           
     </ul>
