@@ -12,8 +12,7 @@ export default {
   },
 
   mounted() {
-    this.state.getData('https://api.themoviedb.org/3/search/movie?api_key=dac5f4cfb17fc8dc2333867ac5b06c0b&query=mamma')
-    console.log(state.movies);
+    this.state.getData('https://api.themoviedb.org/3/search/movie?api_key=dac5f4cfb17fc8dc2333867ac5b06c0b&query=the+matrix')
   }
 }
 </script>
@@ -21,7 +20,16 @@ export default {
 
 <template>
   <div>
-    <!-- <h1>{{state.movies[0]}}</h1> -->
+    <ul>
+      <li v-for="movie in state.movies">
+        <h5>
+          {{ movie.title }}
+        </h5>
+        <img :src="movie.poster_path" alt="">
+        <p>{{ movie.release_date }}</p>
+      </li>
+          
+    </ul>
   </div>
 </template>
 
