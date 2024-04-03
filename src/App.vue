@@ -1,14 +1,16 @@
+
 <script>
+import AppMain from './components/AppMain.vue';
+
 export default{
-
+  components:{
+    AppMain,
+  },
 }
-
 </script>
 
 <template>
-  <div>
-    <h1>Hello World</h1>
-  </div>
+  <AppMain />
 </template>
 
 
