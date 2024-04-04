@@ -2,16 +2,24 @@ import { reactive } from 'vue';
 import axios from 'axios';
 
 export const state = reactive({
-    data(){
-        return{
+    data() {
+        return {
             movies: [],
+            searchingText: '',
         }
     },
-    getData(url){
+    callApi(url) {
+        axios.get(url)
+            .then(response => {
+                this.movies = response.data.results
+                // console.log(this.movies);
+            })
+    },
+    getFlags(url){
         axios.get(url)
         .then(response => {
-            this.movies = response.data.results
-            // console.log(this.movies);
+            this.flags = response.data
         })
+    
     }
 })
