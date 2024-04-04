@@ -10,6 +10,7 @@ export default {
     return {
       state,
       countries,
+      poster_base: 'https://image.tmdb.org/t/p/w342'
     }
   },
   methods: {
@@ -44,6 +45,10 @@ export default {
         <div class="box">
 
 
+          <div class="poster-box">
+            <img :src="poster_base + movie.poster_path" alt="">
+          </div>
+
           <h3 v-if="movie.media_type == 'movie'">
             {{ movie.title }}
           </h3>
@@ -67,7 +72,7 @@ export default {
 
           </div>
 
-          <h4>{{ parseInt(movie.vote_average / 2) }}</h4>
+          <h4>{{ Math.ceil(movie.vote_average / 2) }}</h4>
         </div>
       </li>
 
