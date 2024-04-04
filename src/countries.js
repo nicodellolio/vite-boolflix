@@ -1,4 +1,4 @@
-{ "flags" : [
+export const countries = [
     {
       "code": "af",
       "flag_1x1": "flags/1x1/af.svg",
@@ -750,9 +750,9 @@
       "name": "Jamaica"
     },
     {
-      "code": "jp",
-      "flag_1x1": "flags/1x1/jp.svg",
-      "flag_4x3": "flags/4x3/jp.svg",
+      "code": "ja",
+      "flag_1x1": "flags/1x1/ja.svg",
+      "flag_4x3": "flags/4x3/ja.svg",
       "name": "Japan"
     },
     {
@@ -967,7 +967,6 @@
       "name": "Montenegro"
     },
     {
-      Plymou
       "code": "ms",
       "flag_1x1": "flags/1x1/ms.svg",
       "flag_4x3": "flags/4x3/ms.svg",
@@ -1371,7 +1370,6 @@
       "name": "Spain"
     },
     {
-      Colom
       "code": "lk",
       "flag_1x1": "flags/1x1/lk.svg",
       "flag_4x3": "flags/4x3/lk.svg",
@@ -1474,7 +1472,6 @@
       "name": "Trinidad and Tobago"
     },
     {
-      Se
       "code": "sh-ta",
       "flag_1x1": "flags/1x1/sh-ta.svg",
       "flag_4x3": "flags/4x3/sh-ta.svg",
@@ -1639,4 +1636,3 @@
       "name": "Zimbabwe"
     }
   ]
-}

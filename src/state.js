@@ -9,17 +9,11 @@ export const state = reactive({
         }
     },
     callApi(url) {
-        axios.get(url)
-            .then(response => {
-                this.movies = response.data.results
-                // console.log(this.movies);
-            })
-    },
-    getFlags(url){
-        axios.get(url)
+        axios
+        .get(url)
         .then(response => {
-            this.flags = response.data
-        })
-    
+            this.movies = response.data.results
+            })
+
     }
 })
