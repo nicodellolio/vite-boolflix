@@ -46,7 +46,8 @@ export default {
 
 
           <div class="poster-box">
-            <img :src="poster_base + movie.poster_path" alt="">
+            <img v-if="movie.poster_path != null" :src="poster_base + movie.poster_path" alt="">
+            <img style="width: 342px;" v-else src="/noimage.png" alt="">
           </div>
 
           <h3 v-if="movie.media_type == 'movie'">
