@@ -17,9 +17,9 @@ export default {
     searchMovie() {
       this.getMovie(`https://api.themoviedb.org/3/search/movie?api_key=dac5f4cfb17fc8dc2333867ac5b06c0b&query=${this.state.searchingText}`)
     },
-    languagePick(){
-      flag = `flags/1x1/${movie.original_language}.svg`
-    }
+    // languagePick(){
+    //   flag = `flags/1x1/${movie.original_language}.svg`
+    // }
   },
   mounted() {
     this.state.getFlags('http://localhost:3000/flags')
@@ -33,7 +33,7 @@ export default {
   <div class="searchbox">
     
     <input type="text" v-model="this.state.searchingText" @keypress.enter="searchMovie(url)">
-    <button @click="searchMovie(url), languagePick()"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <button @click="searchMovie(url)"><i class="fa fa-search" aria-hidden="true"></i></button>
     
   </div>
 
@@ -52,9 +52,8 @@ export default {
         <aside>({{ movie.original_title }})</aside>
 
         <div class="language-box">
-          <div v-for="flag in state.flags">{{ flag }}</div>
-          <img :src="movie_flag" alt="">
-          <!-- <h4 v-else>{{ movie.original_language }}</h4> -->
+          <div v-for="flag in state.flags"></div>
+          <img :src="`public/flags/1x1/${movie.original_language}.svg`" alt="">
         </div>
 
         <h4>{{ parseInt(movie.vote_average / 2) }}</h4>
