@@ -66,6 +66,8 @@ main{
                 }
                 .rating{
                     margin-top: 0.5rem;
+                    font-size: 1.4rem;
+                    color: gold;
                 }
                     
             }

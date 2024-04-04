@@ -13,7 +13,11 @@ export const state = reactive({
         .get(url)
         .then(response => {
             this.movies = response.data.results
-            })
+        })
+        .catch(err => {
+            console.log(err);
+            console.log(err.message);
+        })
 
     }
 })
