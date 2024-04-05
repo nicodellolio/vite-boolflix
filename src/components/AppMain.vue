@@ -11,7 +11,6 @@ export default {
       state,
       countries,
       poster_base: 'https://image.tmdb.org/t/p/w342',
-      showInfo: false
     }
   },
   methods: {
@@ -43,7 +42,7 @@ export default {
     },
   },
   mounted() {
-
+    this.getMovie(`https://api.themoviedb.org/3/trending/all/week?api_key=dac5f4cfb17fc8dc2333867ac5b06c0b`)
   }
 }
 </script>
@@ -67,7 +66,7 @@ export default {
     <div class="container movies">
       <div class="row">
         <div v-for="movie in state.movies" class="col">
-          <div v-on:mouseenter="showInfo=true" v-on:mouseleave="showInfo=false" class="card">
+          <div v-if="movie.media_type != 'person'" v-on:mouseenter="showInfo=true" v-on:mouseleave="showInfo=false" class="card">
 
             <div class="poster-box">
               <img v-if="movie.poster_path != null" :src="poster_base + movie.poster_path" alt="">
@@ -88,7 +87,7 @@ export default {
               <aside v-else-if="movie.media_type == 'tv'">({{ movie.original_name }})
               </aside>
 
-              <textarea name="" id="overview" cols="32" rows="13">{{ movie.overview }}</textarea>
+              <textarea name="" id="overview" cols="32" rows="11">{{ movie.overview }}</textarea>
 
 
               <section class="language-box">
@@ -113,6 +112,53 @@ export default {
       </div>
     </div>
   </main>
+
+  <div class="divider"></div>
+  <footer>
+    <h2>Subscribe Now</h2>
+    <h3>Thousands of titles are waiting for you</h3>
+    <button>TRY IT FOR FREE</button>
+
+    <div class="credits">
+      <div class="col-leftOne">
+        <ul>
+          <li>FAQ</li>
+          <li>Investors relation</li>
+          <li>How to watch Boolflix</li>
+          <li>Company Info</li>
+          <li>Legal Notes</li>
+        </ul>
+      </div>
+      <div class="col-leftTwo">
+        <ul>
+          <li>Service Center</li>
+          <li>Job Opportunity</li>
+          <li>Use Condition</li>
+          <li>Contact Us</li>
+          <li>Only on Boolflix</li>
+        </ul>
+      </div>
+      <div class="col-rightTwo">
+        <ul>
+          <li>Account</li>
+          <li>Claim gift card</li>
+          <li>Privacy</li>
+          <li>Speed Test</li>
+          <li>Adv Preferences</li>
+        </ul>
+      </div>
+      <div class="col-rightOne">
+        <ul>
+          <li>Media Center</li>
+          <li>Buy Gift Card</li>
+          <li>Cookie Preferences</li>
+          <li>Legal Garantee</li>
+          <li>Created by Nico</li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
 </template>
 
 
