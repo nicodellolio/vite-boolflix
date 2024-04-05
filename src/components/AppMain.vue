@@ -10,7 +10,8 @@ export default {
     return {
       state,
       countries,
-      poster_base: 'https://image.tmdb.org/t/p/w342'
+      poster_base: 'https://image.tmdb.org/t/p/w342',
+      showInfo: false
     }
   },
   methods: {
@@ -19,6 +20,7 @@ export default {
     },
     searchMovie() {
       this.getMovie(`https://api.themoviedb.org/3/search/multi?api_key=dac5f4cfb17fc8dc2333867ac5b06c0b&query=${this.state.searchingText}`)
+      
     },
     myRating(vote_average){
       let rating = Math.ceil(vote_average / 2);
@@ -38,7 +40,7 @@ export default {
       }
 
       return ratingString;
-    }
+    },
   },
   mounted() {
 
@@ -50,7 +52,7 @@ export default {
 <template>
 
   <header>
-    <img class="logo" src="/public/logo.png" alt="">
+    <img class="logo" src="/logo.png" alt="">
     <div class="searchbox">
 
       <input placeholder='what are you watching today?' type="text" v-model="this.state.searchingText"
@@ -65,7 +67,7 @@ export default {
     <div class="container movies">
       <div class="row">
         <div v-for="movie in state.movies" class="col">
-          <div class="card">
+          <div v-on:mouseenter="showInfo=true" v-on:mouseleave="showInfo=false" class="card">
 
             <div class="poster-box">
               <img v-if="movie.poster_path != null" :src="poster_base + movie.poster_path" alt="">
@@ -86,6 +88,8 @@ export default {
               <aside v-else-if="movie.media_type == 'tv'">({{ movie.original_name }})
               </aside>
 
+              <textarea name="" id="overview" cols="32" rows="13">{{ movie.overview }}</textarea>
+
 
               <section class="language-box">
 
@@ -100,6 +104,8 @@ export default {
                 {{ myRating(movie.vote_average) }}
 
               </section>
+
+              <div class="type">{{ movie.media_type }}</div>
             </div>
 
           </div>

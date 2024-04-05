@@ -1,21 +1,27 @@
-body{
+body {
     background-color: #3333335d;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-header{
+
+header {
     display: flex;
     justify-content: space-between;
-    background-color:rgb(181, 181, 181);
-    .logo{
+    background-color: rgb(181, 181, 181);
+
+    .logo {
         width: 400px;
         margin-left: -1rem;
     }
+
     border-bottom: 2px solid purple;
     margin: 0 2rem;
-    .searchbox{
+
+    .searchbox {
         padding: 3rem 3rem;
-        input{
+
+        input {
             width: 400px;
             padding: 1rem;
             border: none;
@@ -24,7 +30,8 @@ header{
             border-bottom-left-radius: 30px;
             font-size: 1.2rem;
         }
-        button{
+
+        button {
             width: 50px;
             padding: 14.5px 1rem 14.5px 0.5rem;
             border: none;
@@ -35,43 +42,84 @@ header{
         }
     }
 }
-main{
-    .container{
+
+main {
+    .container {
         margin: 2rem;
-        .row{
+
+        .row {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem 3rem;
-            .col{
+
+            .col {
                 flex-grow: 1;
-                .poster-box{
+
+                .poster-box {
                     width: 342px;
                     height: 513px;
                     filter: drop-shadow(10px 10px 20px purple);
                 }
-                .info{
-                    max-width: 342px;
+
+                .info {
+                    box-sizing: border-box;
+                    font-size: 1.25rem;
+                    width: 342px;
+                    height: 513px;
+                    background-color: #33333360;
+                    filter: drop-shadow(10px 10px 20px purple);
+                    text-align: left;
+                    padding: 1rem;
+                    position: relative;
+
                 }
-                .title{
+
+                .title {
                     text-transform: uppercase;
                 }
-                .language-box{
-                    position: relative;
-                    img{
+
+                .language-box {
+                    img {
                         position: absolute;
-                        right: 0;
-                        width: 50px;
-                        bottom: -15px
+                        right: 15px;
+                        width: 100px;
+                        bottom: 15px
                     }
                 }
-                .rating{
-                    margin-top: 0.5rem;
+
+                .rating {
+                    margin-top: 2rem;
                     font-size: 1.4rem;
                     color: gold;
                 }
-                    
+
+                #overview {
+                    background-color: transparent;
+                    border: none;
+                    resize: none;
+                    margin-top: 1rem;
+                }
+
+                .type {
+                    text-transform: uppercase;
+                    position: absolute;
+                    bottom: 15px;
+                }
+
             }
         }
     }
 }
 
+
+div.col:hover .poster-box {
+    display: none;
+}
+
+div.col:hover .info {
+    display: block;
+}
+
+div.col .info {
+    display: none;
+}
