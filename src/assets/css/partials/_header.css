@@ -1,0 +1,43 @@
+body {
+    background-color: #3333335d;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(181, 181, 181);
+    margin-bottom: -2rem;
+
+    .logo {
+        width: 400px;
+        margin-left: -1rem;
+    }
+
+    .searchbox {
+        padding: 3rem 3rem;
+
+        input {
+            width: 400px;
+            padding: 1rem;
+            border: none;
+            box-shadow: 10px 10px 30px grey;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            font-size: 1.2rem;
+        }
+
+        button {
+            width: 50px;
+            padding: 14.5px 1rem 14.5px 0.5rem;
+            border: none;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+    }
+}
