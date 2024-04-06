@@ -1,11 +1,7 @@
-body {
-    background-color: #3333335d;
+header {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-header {
     width: 100%;
     display: flex;
     justify-content: space-between;

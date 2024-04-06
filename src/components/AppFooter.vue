@@ -15,8 +15,10 @@ export default {
 
 <template>
 
+  <footer>
 
-  <h2>Subscribe Now</h2>
+
+    <h2>Subscribe Now</h2>
     <h3>Thousands of titles are waiting for you</h3>
     <button>TRY IT FOR FREE</button>
 
@@ -59,10 +61,11 @@ export default {
       </div>
 
     </div>
+  </footer>
 
 </template>
 
 
 <style lang="css">
-  @import '../assets/css/partials/_footer.css';
+@import '../assets/css/partials/_footer.css';
 </style>

@@ -5,21 +5,32 @@ export const state = reactive({
     data() {
         return {
             movies: [],
+            actors: [],
             searchingText: '',
-            db_base_api: 'https://api.themoviedb.org/3/search/multi?api_key=',
-            personal_api_key: 'dac5f4cfb17fc8dc2333867ac5b06c0b'
         }
     },
     callApi(url) {
         axios
-        .get(url)
-        .then(response => {
-            this.movies = response.data.results
-        })
-        .catch(err => {
-            console.log(err);
-            console.log(err.message);
-        })
+            .get(url)
+            .then(response => {
+                this.movies = response.data.results
+            })
+            .catch(err => {
+                console.log(err);
+                console.log(err.message);
+            })
 
+    },
+    callApi_actors(url) {
+        axios
+            .get(url)
+            .then(response => {
+                this.actors = response.data.results
+                this.actors.length = 5
+            })
+            .catch(err => {
+                console.log(err);
+                console.log(err.message);
+            })
     }
 })

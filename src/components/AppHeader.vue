@@ -14,16 +14,18 @@ export default {
 </script>
 
 <template>
-  
-  <img class="logo" src="/logo.png" alt="">
-  <div class="searchbox">
+  <header>
 
-    <input placeholder='what are you watching today?' type="text" v-model="this.state.searchingText"
-      @keypress.enter="$emit('search')">
-    <button @click="$emit('search')"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <img class="logo" src="/logo.png" alt="">
+    <div class="searchbox">
 
-  </div>
+      <input placeholder='what are you watching today?' type="text" v-model="this.state.searchingText"
+        @keypress.enter="$emit('search')">
+      <button @click="$emit('search')"><i class="fa fa-search" aria-hidden="true"></i></button>
 
+    </div>
+
+  </header>
 </template>
 
 

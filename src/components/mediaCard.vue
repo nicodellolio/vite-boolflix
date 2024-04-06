@@ -14,8 +14,6 @@ export default {
     },
     methods: {
 
-
-
         myRating(vote_average) {
             let rating = Math.ceil(vote_average / 2);
             let ratingString = '';
